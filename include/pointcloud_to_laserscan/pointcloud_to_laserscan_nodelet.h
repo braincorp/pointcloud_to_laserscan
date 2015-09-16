@@ -78,6 +78,8 @@ namespace pointcloud_to_laserscan
 
     ros::NodeHandle nh_, private_nh_;
     ros::Publisher pub_;
+    ros::Publisher pub_clearing_;
+
     boost::mutex connect_mutex_;
 
     boost::shared_ptr<tf2_ros::Buffer> tf2_;
@@ -91,6 +93,7 @@ namespace pointcloud_to_laserscan
     double tolerance_;
     double min_height_, max_height_, angle_min_, angle_max_, angle_increment_, scan_time_, range_min_, range_max_;
     bool use_inf_;
+    int ignore_first_num_of_points_;
   };
 
 }  // pointcloud_to_laserscan
