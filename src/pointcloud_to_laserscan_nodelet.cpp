@@ -172,7 +172,7 @@ namespace pointcloud_to_laserscan
     if (use_inf_)
     {
       output.ranges.assign(ranges_size, std::numeric_limits<double>::infinity());
-      output_clearing.ranges.assign(ranges_size, output.range_max + 1.0);
+      output_clearing.ranges.assign(ranges_size, output.range_max-1.);
     }
     else
     {
